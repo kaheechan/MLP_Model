@@ -78,7 +78,7 @@ class Method_MLP(method, nn.Module):
         # Define Function Here
         self.linear_layer_1 = nn.Linear(784, 100)
         self.activation_function_1 = nn.ReLU()
-        self.linear_layer_2 = nn.Linear(100, 500)
+        self.linear_layer_2 = nn.Linear(100, 100)
         self.activation_function_2 = nn.ReLU()
         self.linear_layer_3 = nn.Linear(500, 100)
         self.activation_function_3 = nn.ReLU()
@@ -159,11 +159,12 @@ class Method_MLP(method, nn.Module):
         y_test = th.Tensor(y_test.tolist())
 
         # Plot the Learning Curve
-        plt.plot(train_epochs, train_points)
-        plt.plot(test_epochs, test_points)
+        plt.plot(train_epochs, train_points, color='blue', label='Training')
+        plt.plot(test_epochs, test_points, color='yellow', label='Testing')
         plt.xlabel('Epochs')
         plt.ylabel('Losses')
         plt.title('Learning Curve')
+        plt.legend()
         plt.show()
 
         return {'pred_y': y_pred, 'true_y': y_test}

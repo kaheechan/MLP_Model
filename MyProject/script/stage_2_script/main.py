@@ -35,12 +35,10 @@ if __name__ == '__main__':
     evaluate_accuracy = Evaluate_Accuracy('evaluate stage 2', '')
     evaluate_accuracy.data = result_data
 
-
-
-    print(evaluate_accuracy.evaluate_accuracy())
-    print(evaluate_accuracy.evaluate_f1())
-    print(evaluate_accuracy.evaluate_precision())
-    print(evaluate_accuracy.evaluate_recall())
+    print('Accuracy is: ', evaluate_accuracy.evaluate_accuracy())
+    print('Precision is: ', evaluate_accuracy.evaluate_precision())
+    print('Recall is: ', evaluate_accuracy.evaluate_recall())
+    print('F1 Score is: ', evaluate_accuracy.evaluate_f1())
 
 
 
