@@ -21,3 +21,7 @@ class dataset:
     @abc.abstractmethod
     def load_data(self):
         return
+
+    @abc.abstractmethod
+    def visualize_data(self):
+        return
